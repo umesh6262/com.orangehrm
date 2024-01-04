@@ -7,7 +7,6 @@
       <class name="pages.test.PageTest2">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test1"/>
           <include name="test3"/>
           <include name="AfterMethod"/>
         </methods>
@@ -15,11 +14,7 @@
       <class name="pages.test.PageTest3">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test1"/>
-          <include name="test2"/>
-          <include name="test5"/>
           <include name="test3"/>
-          <include name="test4"/>
           <include name="AfterMethod"/>
         </methods>
       </class> <!-- pages.test.PageTest3 -->
