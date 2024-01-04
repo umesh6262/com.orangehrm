@@ -4,28 +4,23 @@ import java.net.MalformedURLException;
 import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.Parameters;
+
+import factory.DriverFactory;
+import manager.TestManager;
 
 
 public abstract class BaseTest {
 	
 	protected WebDriver driver;
 	
-	@AfterMethod
-	public void AfterMethod() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.quit();
-	}
-	
-	@Parameters({"browserName"})
 	@BeforeMethod()
-	public void beforeMethod(String browserName) throws MalformedURLException, InterruptedException {
+	public void beforeMethod() throws MalformedURLException, InterruptedException {
 		Thread.sleep(2000);
-		driver = new ChromeDriver() ; //DriverFactory.getDriver(browserName);
+//		System.out.println("before method");
+		driver = DriverFactory.getDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(1));
@@ -33,11 +28,22 @@ public abstract class BaseTest {
 
 	}
 
+	@AfterMethod
+	public void AfterMethod() throws InterruptedException {
+		Thread.sleep(2000);
+		driver.quit();
+	}
+	
 	public WebDriver getWebDriver() {
 		return driver;
 	}
-	public static void addLog(String logMessage) {
-//		TestManager.addLogToTest(Thread.currentThread().threadId(), logMessage);
+	public void addLog(String logMessage) {
+		TestManager.addLogToTest(Thread.currentThread().threadId(), logMessage);
 		Reporter.log(logMessage);
+	}
+	public void addAuthor(String author) {
+		System.out.println("Adding Author BaseTest : "+Thread.currentThread().getId() + " Avtive Count : "+Thread.activeCount() );
+		;
+		TestManager.assignAuthorToTest(Thread.currentThread().getId(), author);
 	}
 }

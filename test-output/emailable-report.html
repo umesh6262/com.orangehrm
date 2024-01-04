@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "https://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
+<title>TestNG Report</title>
+<style type="text/css">table {margin-bottom:10px;border-collapse:collapse;empty-cells:show}th,td {border:1px solid #009;padding:.25em .5em}th {vertical-align:bottom}td {vertical-align:top}table a {font-weight:bold}.stripe td {background-color: #E6EBF9}.num {text-align:right}.passedodd td {background-color: #3F3}.passedeven td {background-color: #0A0}.skippedodd td {background-color: #DDD}.skippedeven td {background-color: #CCC}.failedodd td,.attn {background-color: #F33}.failedeven td,.stripe .attn {background-color: #D00}.stacktrace {white-space:pre;font-family:monospace}.totop {font-size:85%;text-align:center;border-bottom:2px solid #000}.invisible {display:none}</style>
+</head>
+<body>
+<table>
+<tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Retried</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
+<tr><th colspan="8">Suite</th></tr>
+<tr><td><a href="#t0">Test</a></td><td class="num">0</td><td class="num attn">7</td><td class="num">0</td><td class="num">0</td><td class="num">4,173</td><td></td><td></td></tr>
+</table>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">Test &#8212; failed (configuration methods)</th></tr><tr class="failedeven"><td rowspan="1">pages.test.PageTest2</td><td><a href="#m0">beforeMethod</a></td><td rowspan="1">1704374494028</td><td rowspan="1">2010</td></tr><tr class="failedodd"><td rowspan="1">pages.test.PageTest3</td><td><a href="#m1">beforeMethod</a></td><td rowspan="1">1704374491946</td><td rowspan="1">2028</td></tr><tr><th colspan="4">Test &#8212; skipped (configuration methods)</th></tr><tr class="skippedeven"><td rowspan="3">pages.test.PageTest2</td><td><a href="#m2">AfterMethod</a></td><td rowspan="2">1704374496049</td><td rowspan="2">-1704374496049</td></tr><tr class="skippedeven"><td><a href="#m3">AfterMethod</a></td></tr><tr class="skippedeven"><td><a href="#m4">beforeMethod</a></td><td rowspan="1">1704374496045</td><td rowspan="1">-1704374496045</td></tr><tr class="skippedodd"><td rowspan="9">pages.test.PageTest3</td><td><a href="#m5">AfterMethod</a></td><td rowspan="5">1704374494012</td><td rowspan="5">-1704374494012</td></tr><tr class="skippedodd"><td><a href="#m6">AfterMethod</a></td></tr><tr class="skippedodd"><td><a href="#m7">AfterMethod</a></td></tr><tr class="skippedodd"><td><a href="#m8">AfterMethod</a></td></tr><tr class="skippedodd"><td><a href="#m9">AfterMethod</a></td></tr><tr class="skippedodd"><td><a href="#m10">beforeMethod</a></td><td rowspan="4">1704374493998</td><td rowspan="4">-1704374493998</td></tr><tr class="skippedodd"><td><a href="#m11">beforeMethod</a></td></tr><tr class="skippedodd"><td><a href="#m12">beforeMethod</a></td></tr><tr class="skippedodd"><td><a href="#m13">beforeMethod</a></td></tr><tr><th colspan="4">Test &#8212; skipped</th></tr><tr class="skippedeven"><td rowspan="2">pages.test.PageTest2</td><td><a href="#m14">test1</a></td><td rowspan="1">1704374496040</td><td rowspan="1">0</td></tr><tr class="skippedeven"><td><a href="#m15">test3</a></td><td rowspan="1">1704374496046</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td rowspan="5">pages.test.PageTest3</td><td><a href="#m16">test1</a></td><td rowspan="1">1704374493989</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m17">test2</a></td><td rowspan="1">1704374494000</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m18">test3</a></td><td rowspan="1">1704374494008</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m19">test4</a></td><td rowspan="1">1704374494016</td><td rowspan="1">0</td></tr><tr class="skippedodd"><td><a href="#m20">test5</a></td><td rowspan="1">1704374494022</td><td rowspan="1">0</td></tr></tbody>
+</table>
+<h2>Test</h2><h3 id="m0">pages.test.PageTest2#beforeMethod</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">pages.test.PageTest3#beforeMethod</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">pages.test.PageTest2#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">pages.test.PageTest2#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m4">pages.test.PageTest2#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m5">pages.test.PageTest3#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m6">pages.test.PageTest3#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m7">pages.test.PageTest3#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m8">pages.test.PageTest3#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m9">pages.test.PageTest3#AfterMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m10">pages.test.PageTest3#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m11">pages.test.PageTest3#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m12">pages.test.PageTest3#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m13">pages.test.PageTest3#beforeMethod</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m14">pages.test.PageTest2#test1</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m15">pages.test.PageTest2#test3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m16">pages.test.PageTest3#test1</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m17">pages.test.PageTest3#test2</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m18">pages.test.PageTest3#test3</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m19">pages.test.PageTest3#test4</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m20">pages.test.PageTest3#test5</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.NullPointerException: Cannot invoke &quot;String.toLowerCase()&quot; because the return value of &quot;utility.Utility.getConfigurationProperty(String)&quot; is null
+	at factory.DriverFactory.getDriver(DriverFactory.java:26)
+	at pages.test.BaseTest.beforeMethod(BaseTest.java:23)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 29 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+</body>
+</html>

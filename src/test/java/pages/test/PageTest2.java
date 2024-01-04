@@ -13,45 +13,28 @@ import org.testng.annotations.Test;
 
 public class PageTest2 extends BaseTest {
 
-	WebDriver driver;
-
-	@AfterMethod
-	public void AfterMethod() throws InterruptedException {
-		Thread.sleep(2000);
-		driver.close();
-	}
-
-	@BeforeMethod
-	public void beforeMethod() throws MalformedURLException {
-		driver = new ChromeDriver() ; //DriverFactory.getDriver(browserName);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
-		driver.get("https://www.coverfox.com/");
-
-	}
-
-
 	@Test(groups = "smoke" , testName = "test1", description = "PageTest2 test1 description" , timeOut = 3000 )
-	public void test1() throws FileNotFoundException {
+	public void test1() throws FileNotFoundException, InterruptedException {
+		System.out.println("test1 started sysout");
+		Thread.sleep(1000);
+		addAuthor("Umesh Shelke");
+		addLog("adding logs to test1");
 		Assert.assertTrue(true);
 	}
 
 	@Test(groups = "regression" , testName = "test3", description = "PageTest2 test3 description" , timeOut = 3000 )
-	public void test3() throws FileNotFoundException {
-		Assert.assertTrue(true);
-	}
-	
-	@Test(groups = "smoke" , testName = "test4", description = "PageTest2 test4 description"  )
-	public void test4() throws InterruptedException {
-		driver.navigate().forward();
+	public void test3() throws FileNotFoundException, InterruptedException {
+		System.out.println("test3 started sysout");
 		Thread.sleep(1000);
-		
-		
+		addAuthor("Shyam Shelke");
+		Assert.assertTrue(false);
 	}
 	
-	@Override
-	public WebDriver getWebDriver() {
-		return driver;
-	}
+//	@Test(groups = "smoke" , testName = "test4", description = "PageTest2 test4 description"  )
+//	public void test4() throws InterruptedException {
+//		addAuthor("Tom");
+//		driver.navigate().forward();
+//		Thread.sleep(1000);
+//	}
 
 }
