@@ -19,7 +19,7 @@ public abstract class BaseTest {
 	@BeforeMethod()
 	public void beforeMethod() throws MalformedURLException, InterruptedException {
 		Thread.sleep(2000);
-//		System.out.println("before method");
+		System.out.println("before method");
 		driver = DriverFactory.getDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
@@ -37,13 +37,15 @@ public abstract class BaseTest {
 	public WebDriver getWebDriver() {
 		return driver;
 	}
+	public Object getCurrentObject() {
+		return this;
+	}
 	public void addLog(String logMessage) {
-		TestManager.addLogToTest(Thread.currentThread().threadId(), logMessage);
+		TestManager.addLogToTest(getCurrentObject() , logMessage);
 		Reporter.log(logMessage);
 	}
 	public void addAuthor(String author) {
-		System.out.println("Adding Author BaseTest : "+Thread.currentThread().getId() + " Avtive Count : "+Thread.activeCount() );
-		;
-		TestManager.assignAuthorToTest(Thread.currentThread().getId(), author);
+		System.out.println("Adding Author BaseTest : "+getCurrentObject() + " Avtive Count : "+Thread.activeCount() );
+		TestManager.assignAuthorToTest(getCurrentObject(), author);
 	}
 }

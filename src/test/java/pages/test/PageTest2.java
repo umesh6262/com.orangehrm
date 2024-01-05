@@ -16,7 +16,6 @@ public class PageTest2 extends BaseTest {
 	@Test(groups = "smoke" , testName = "test1", description = "PageTest2 test1 description" , timeOut = 3000 )
 	public void test1() throws FileNotFoundException, InterruptedException {
 		System.out.println("test1 started sysout");
-		Thread.sleep(1000);
 		addAuthor("Umesh Shelke");
 		addLog("adding logs to test1");
 		Assert.assertTrue(true);
@@ -30,11 +29,11 @@ public class PageTest2 extends BaseTest {
 		Assert.assertTrue(false);
 	}
 	
-//	@Test(groups = "smoke" , testName = "test4", description = "PageTest2 test4 description"  )
-//	public void test4() throws InterruptedException {
-//		addAuthor("Tom");
-//		driver.navigate().forward();
-//		Thread.sleep(1000);
-//	}
+	@Test(groups = "smoke" , testName = "test4", description = "PageTest2 test4 description"  )
+	public void test4() throws InterruptedException {
+		addAuthor("Tom");
+		driver.navigate().forward();
+		Thread.sleep(1000);
+	}
 
 }

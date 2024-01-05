@@ -16,15 +16,12 @@ public class PageTest3 extends BaseTest {
 
 	@Test(groups = "smoke" , testName = "test1", description = "PageTest3 test1 description" , timeOut = 3000 )
 	public void test1() throws FileNotFoundException, InterruptedException {
-		Thread.sleep(1000);
-		System.out.println("Page 3 : " + Thread.currentThread().threadId());
-		addAuthor("Lisa : ");
+		addAuthor("Lisa ");
 		Assert.assertTrue(true);
 	}
 
 	@Test(groups = {"regression","sanity"} , testName = "test3", description = "PageTest3 test3 description" , timeOut = 3000 )
 	public void test3() throws FileNotFoundException, InterruptedException {
-		Thread.sleep(1000);
 		addAuthor("Jonathan");
 		Assert.assertTrue(false);
 	}
@@ -42,6 +39,7 @@ public class PageTest3 extends BaseTest {
 	
 	@Test(groups = "sanity" , testName = "test5", description = "PageTest3 test2 description" , timeOut = 3000 )
 	public void test5() {
+		addAuthor("harry");
 		Assert.assertTrue(true);
 	}
 	

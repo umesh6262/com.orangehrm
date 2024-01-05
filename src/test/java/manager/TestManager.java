@@ -21,14 +21,14 @@ import utility.Utility;
 public class TestManager {
 
 	private static ExtentReports extent = ReportManager.getReportManager().getExtentReporter();
-	private static Map<Long, ExtentTest> testMapper = new HashMap<>();
+	private static Map<Object, ExtentTest> testMapper = new HashMap<>();
 
 	private static String getMethodName(ITestResult result) {
 		// return current calling tests method name
 		return result.getMethod().getConstructorOrMethod().getName();
 	}
 
-	public static void onTestStart(Long threadId, ITestResult result) {
+	public static void onTestStart(Object runningTestObject, ITestResult result) {
 		// adding test in mapper, //passing test name and test description to
 		// createTest(name,description)
 		
@@ -43,40 +43,39 @@ public class TestManager {
 			.assignCategory(result.getMethod().getGroups()) // adding groups to the test cases
 			.log(Status.INFO, "Execution Started ");
 
-		testMapper.put(threadId, test);
-		System.out.println(Thread.currentThread().threadId() + " : " + testMapper);
+		testMapper.put(runningTestObject, test);
 	}
 
-	public static void onTestSuccess(Long threadId, ITestResult result) {
-		if (testMapper.containsKey(threadId)) {
-			ExtentTest test = testMapper.get(threadId);
+	public static void onTestSuccess(Object runningTestObject, ITestResult result) {
+		if (testMapper.containsKey(runningTestObject)) {
+			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.PASS, "Test Passed ");
-			removeTestFromTestMapper(threadId);
+			removeTestFromTestMapper(runningTestObject);
 		}
 //		test.pass("Test Passed ");
 	}
 
-	public static void onTestFailure(Long threadId, ITestResult result) {
+	public static void onTestFailure(Object runningTestObject, ITestResult result) {
 		BaseTest testPage = (BaseTest) (result.getInstance());
 
 		String imageBase64 = Utility.getScreenshotAsBase64(testPage.getWebDriver());
 
-		String destinationFilePath = Utility.getScreenshotAsFile(testPage.getWebDriver(), result.getName());
-		if (testMapper.containsKey(threadId)) {
-			ExtentTest test = testMapper.get(threadId);
+		String destinationFilePath = Utility.getScreenshotAsFile(testPage.getWebDriver(), getMethodName(result));
+		if (testMapper.containsKey(runningTestObject)) {
+			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.FAIL, result.getThrowable())
 				.addScreenCaptureFromBase64String(imageBase64)
 				.addScreenCaptureFromPath(destinationFilePath);
 			
-			removeTestFromTestMapper(threadId);
+			removeTestFromTestMapper(runningTestObject);
 		}
 	}
 
-	public static void onTestSkipped(Long threadId, ITestResult result) {
-		if (testMapper.containsKey(threadId)) {
-			ExtentTest test = testMapper.get(threadId);
+	public static void onTestSkipped(Object runningTestObject, ITestResult result) {
+		if (testMapper.containsKey(runningTestObject)) {
+			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.SKIP, result.getThrowable());
-			removeTestFromTestMapper(threadId);
+			removeTestFromTestMapper(runningTestObject);
 		}
 	}
 
@@ -86,26 +85,26 @@ public class TestManager {
 		extent.flush();
 	}
 
-	public static ExtentTest getExtentTest(Long threadId) {
-		return testMapper.get(threadId);
+	public static ExtentTest getExtentTest(Object runningTestObject) {
+		return testMapper.get(runningTestObject);
 	}
 
-	public static void addLogToTest(Long threadId, String logMsg) {
-		if (testMapper.containsKey(threadId)) {
-			ExtentTest test = testMapper.get(threadId);
+	public static void addLogToTest(Object runningTestObject, String logMsg) {
+		if (testMapper.containsKey(runningTestObject)) {
+			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.INFO, logMsg);
 		}
 	}
 
-	public static void assignAuthorToTest(Long threadId, String authorName) {
+	public static void assignAuthorToTest(Object runningTestObject, String authorName) {
 		System.out.println("adding Author *TestManager* "+ testMapper + " : " + Thread.currentThread().threadId());
 		
-		Set<Entry<Long, ExtentTest>> mapIterator = testMapper.entrySet();
+		Set<Entry<Object, ExtentTest>> mapIterator = testMapper.entrySet();
 		
-		for(Entry<Long, ExtentTest> entry :  mapIterator) {
-			Long id = entry.getKey();
-			System.out.println(id + " : " + threadId);
-			if( id.equals(threadId)  ) {
+		for(Entry<Object, ExtentTest> entry :  mapIterator) {
+			Object object = entry.getKey();
+			System.out.println(object + " : " + runningTestObject);
+			if( object.equals(runningTestObject)  ) {
 				System.out.println("Adding Author "+ authorName);
 				ExtentTest test = entry.getValue();
 				test.assignAuthor(authorName);
@@ -114,8 +113,8 @@ public class TestManager {
 		
 	}
 
-	private static void removeTestFromTestMapper(Long threadId) {
+	private static void removeTestFromTestMapper(Object runningTestObject) {
 		extent.flush();
-		testMapper.remove(threadId);
+		testMapper.remove(runningTestObject);
 	}
 }

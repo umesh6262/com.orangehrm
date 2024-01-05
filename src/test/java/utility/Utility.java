@@ -36,7 +36,9 @@ public class Utility {
 
 	public static String getScreenshotAsFile( WebDriver driver, String testName ) {
 		File imageFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		String destinationFilePath = System.getProperty("user.dir")+ "/screenshots/"+ testName + new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SS").format(new Date()) + ".PNG" ;
+		
+		String fileSeparator = System.getProperty("file.separator");
+		String destinationFilePath = System.getProperty("user.dir")+ fileSeparator+"screenshots"+fileSeparator+ testName + new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss.SS").format(new Date()) + ".PNG" ;
 		File destinationFile = new File(destinationFilePath );
 		try {
 			FileHandler.copy(imageFile, destinationFile );
@@ -54,7 +56,8 @@ public class Utility {
 		String value =null;
 		try {
 			Properties prop = new Properties();
-			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+"/config.properties");
+			String fileSeparator = System.getProperty("file.separator");
+			FileInputStream fis = new FileInputStream(System.getProperty("user.dir")+fileSeparator+"config.properties");
 			prop.load(fis);
 			value = prop.getProperty(key);
 		} catch (IOException e) {
