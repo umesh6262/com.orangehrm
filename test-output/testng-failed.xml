@@ -5,22 +5,15 @@
   <listeners>
     <listener class-name="listener.TestListener"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="classes" name="Test2(failed)">
     <classes>
-      <class name="pages.test.PageTest2">
-        <methods>
-          <include name="beforeMethod"/>
-          <include name="test3"/>
-          <include name="AfterMethod"/>
-        </methods>
-      </class> <!-- pages.test.PageTest2 -->
       <class name="pages.test.PageTest3">
         <methods>
           <include name="beforeMethod"/>
-          <include name="test3"/>
+          <include name="test3_PageTest3"/>
           <include name="AfterMethod"/>
         </methods>
       </class> <!-- pages.test.PageTest3 -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test2(failed) -->
 </suite> <!-- Failed suite [Suite] -->

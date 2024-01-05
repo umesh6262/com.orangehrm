@@ -1,11 +1,7 @@
 package manager;
 
-import java.io.File;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
-import java.util.Map.Entry;
-import java.util.Set;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
@@ -28,7 +24,7 @@ public class TestManager {
 		return result.getMethod().getConstructorOrMethod().getName();
 	}
 
-	public static void onTestStart(Object runningTestObject, ITestResult result) {
+	public synchronized static void onTestStart(Object runningTestObject, ITestResult result) {
 		// adding test in mapper, //passing test name and test description to
 		// createTest(name,description)
 		
@@ -46,21 +42,20 @@ public class TestManager {
 		testMapper.put(runningTestObject, test);
 	}
 
-	public static void onTestSuccess(Object runningTestObject, ITestResult result) {
+	public synchronized static void onTestSuccess(Object runningTestObject, ITestResult result) {
 		if (testMapper.containsKey(runningTestObject)) {
 			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.PASS, "Test Passed ");
 			removeTestFromTestMapper(runningTestObject);
 		}
-//		test.pass("Test Passed ");
 	}
 
-	public static void onTestFailure(Object runningTestObject, ITestResult result) {
-		BaseTest testPage = (BaseTest) (result.getInstance());
+	public synchronized static void onTestFailure(Object runningTestObject, ITestResult result) {
+		BaseTest baseTest = (BaseTest) (result.getInstance());
 
-		String imageBase64 = Utility.getScreenshotAsBase64(testPage.getWebDriver());
-
-		String destinationFilePath = Utility.getScreenshotAsFile(testPage.getWebDriver(), getMethodName(result));
+		String imageBase64 = Utility.getScreenshotAsBase64(baseTest.getWebDriver());
+		System.out.println("Test Failure");
+		String destinationFilePath = Utility.getScreenshotAsFile(baseTest.getWebDriver(), getMethodName(result));
 		if (testMapper.containsKey(runningTestObject)) {
 			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.FAIL, result.getThrowable())
@@ -71,7 +66,7 @@ public class TestManager {
 		}
 	}
 
-	public static void onTestSkipped(Object runningTestObject, ITestResult result) {
+	public synchronized static void onTestSkipped(Object runningTestObject, ITestResult result) {
 		if (testMapper.containsKey(runningTestObject)) {
 			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.SKIP, result.getThrowable());
@@ -80,8 +75,7 @@ public class TestManager {
 	}
 
 	public static synchronized void onFinish() {
-		// writes/updates the test information of reporter to the destination type(HTML
-		// file)
+		// writes/updates the test information of reporter to the destination type(HTML file)
 		extent.flush();
 	}
 
@@ -89,31 +83,22 @@ public class TestManager {
 		return testMapper.get(runningTestObject);
 	}
 
-	public static void addLogToTest(Object runningTestObject, String logMsg) {
+	public synchronized static void addLogToTest(Object runningTestObject, String logMsg) {
 		if (testMapper.containsKey(runningTestObject)) {
 			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.INFO, logMsg);
 		}
 	}
 
-	public static void assignAuthorToTest(Object runningTestObject, String authorName) {
-		System.out.println("adding Author *TestManager* "+ testMapper + " : " + Thread.currentThread().threadId());
-		
-		Set<Entry<Object, ExtentTest>> mapIterator = testMapper.entrySet();
-		
-		for(Entry<Object, ExtentTest> entry :  mapIterator) {
-			Object object = entry.getKey();
-			System.out.println(object + " : " + runningTestObject);
-			if( object.equals(runningTestObject)  ) {
-				System.out.println("Adding Author "+ authorName);
-				ExtentTest test = entry.getValue();
-				test.assignAuthor(authorName);
-			}
+	public synchronized static void assignAuthorToTest(Object runningTestObject, String authorName) {
+
+		if (testMapper.containsKey(runningTestObject)) {
+			ExtentTest test = testMapper.get(runningTestObject);
+			test.assignAuthor(authorName);
 		}
-		
 	}
 
-	private static void removeTestFromTestMapper(Object runningTestObject) {
+	private synchronized static void removeTestFromTestMapper(Object runningTestObject) {
 		extent.flush();
 		testMapper.remove(runningTestObject);
 	}

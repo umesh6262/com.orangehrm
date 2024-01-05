@@ -21,7 +21,7 @@ public class DriverFactory {
 	private DriverFactory() {
 	}
 
-	public static WebDriver getDriver() throws MalformedURLException {
+	public synchronized static WebDriver getDriver() throws MalformedURLException {
 		WebDriver driver;
 		String browserName = Utility.getConfigurationProperty("browser").toLowerCase();
 //		System.out.println("getDriver");
@@ -31,11 +31,12 @@ public class DriverFactory {
 			// "platformName":"linux","se:noVncPort":7900,"se:vncEnabled":true}
 			DesiredCapabilities dc = new DesiredCapabilities();
 			dc.setCapability("browserName", Utility.getConfigurationProperty("browser").toLowerCase());
-			dc.setCapability("browserVersion", Utility.getConfigurationProperty("browser_version").toLowerCase());
+//			dc.setCapability("browserVersion", Utility.getConfigurationProperty("browser_version").toLowerCase());
 			dc.setCapability("platformName", Utility.getConfigurationProperty("os").toLowerCase());
-			driver = new RemoteWebDriver(new URL(Utility.getConfigurationProperty("grid_url").toLowerCase()), dc);
+			driver = new RemoteWebDriver(new URL(Utility.getConfigurationProperty("grid_url")), dc);
 
 		} else if (browserName.equalsIgnoreCase("chrome")) {
+			System.out.println("Instantiating driver");
 			driver = new ChromeDriver();
 		
 		} else if (browserName.equalsIgnoreCase("firefox")) {
