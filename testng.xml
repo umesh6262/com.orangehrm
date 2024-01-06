@@ -5,7 +5,7 @@
 		<listener class-name="listener.TestListener" />
 	</listeners>
 	<parameter name="browserName" value="chrome" />
-  <test thread-count="2" name="Test2" parallel="classes" >
+  <test thread-count="2" name="Test2">
     <classes >
       <class name="pages.test.PageTest3" />
        <class name="pages.test.PageTest2" />

@@ -5,7 +5,7 @@
       <![CDATA[adding logs to test1]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-05T22:45:24 IST" name="Suite" finished-at="2024-01-05T22:46:29 IST" duration-ms="65624">
+  <suite started-at="2024-01-06T11:54:42 IST" name="Suite" finished-at="2024-01-06T11:55:20 IST" duration-ms="37966">
     <groups>
       <group name="regression">
         <method signature="PageTest2.test3()[pri:0, instance:pages.test.PageTest2@2c767a52]" name="test3" class="pages.test.PageTest2"/>
@@ -23,58 +23,58 @@
         <method signature="PageTest3.test5_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" name="test5_PageTest3" class="pages.test.PageTest3"/>
       </group> <!-- sanity -->
     </groups>
-    <test started-at="2024-01-05T22:45:24 IST" name="Test2" finished-at="2024-01-05T22:46:29 IST" duration-ms="65624">
+    <test started-at="2024-01-06T11:54:42 IST" name="Test2" finished-at="2024-01-06T11:55:20 IST" duration-ms="37966">
       <class name="pages.test.PageTest2">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-05T22:45:24 IST" name="beforeMethod" finished-at="2024-01-05T22:45:40 IST" duration-ms="16338" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-06T11:54:42 IST" name="beforeMethod" finished-at="2024-01-06T11:54:55 IST" duration-ms="13295" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test1()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-05T22:45:40 IST" name="test1" description="PageTest2 test1 description" finished-at="2024-01-05T22:45:41 IST" duration-ms="542" status="PASS">
+        <test-method signature="test1()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-06T11:54:55 IST" name="test1" description="PageTest2 test1 description" finished-at="2024-01-06T11:54:55 IST" duration-ms="16" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[adding logs to test1]]>
             </line>
           </reporter-output>
         </test-method> <!-- test1 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-05T22:45:41 IST" name="AfterMethod" finished-at="2024-01-05T22:45:42 IST" duration-ms="221" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-06T11:54:55 IST" name="AfterMethod" finished-at="2024-01-06T11:54:56 IST" duration-ms="425" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-05T22:45:42 IST" name="beforeMethod" finished-at="2024-01-05T22:45:50 IST" duration-ms="8057" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest2@2c767a52]" started-at="2024-01-06T11:54:56 IST" name="beforeMethod" finished-at="2024-01-06T11:55:01 IST" duration-ms="5167" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
       </class> <!-- pages.test.PageTest2 -->
       <class name="pages.test.PageTest3">
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:45:24 IST" name="beforeMethod" finished-at="2024-01-05T22:45:47 IST" duration-ms="23418" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:54:42 IST" name="beforeMethod" finished-at="2024-01-06T11:54:51 IST" duration-ms="8679" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test1_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:45:47 IST" name="test1_PageTest3" description="PageTest3 test1 description" finished-at="2024-01-05T22:45:47 IST" duration-ms="3" status="PASS">
+        <test-method signature="test1_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:54:51 IST" name="test1_PageTest3" description="PageTest3 test1 description" finished-at="2024-01-06T11:54:52 IST" duration-ms="1287" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test1_PageTest3 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:45:47 IST" name="AfterMethod" finished-at="2024-01-05T22:45:47 IST" duration-ms="113" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:54:53 IST" name="AfterMethod" finished-at="2024-01-06T11:54:53 IST" duration-ms="336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:45:47 IST" name="beforeMethod" finished-at="2024-01-05T22:46:13 IST" duration-ms="25254" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:54:53 IST" name="beforeMethod" finished-at="2024-01-06T11:55:00 IST" duration-ms="7084" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test2_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:13 IST" name="test2_PageTest3" description="PageTest3 test2 description" finished-at="2024-01-05T22:46:13 IST" duration-ms="2" status="PASS">
+        <test-method signature="test2_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:00 IST" name="test2_PageTest3" description="PageTest3 test2 description" finished-at="2024-01-06T11:55:00 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test2_PageTest3 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:13 IST" name="AfterMethod" finished-at="2024-01-05T22:46:13 IST" duration-ms="175" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:00 IST" name="AfterMethod" finished-at="2024-01-06T11:55:01 IST" duration-ms="347" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:13 IST" name="beforeMethod" finished-at="2024-01-05T22:46:18 IST" duration-ms="4782" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:01 IST" name="beforeMethod" finished-at="2024-01-06T11:55:07 IST" duration-ms="6479" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test3_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:18 IST" name="test3_PageTest3" description="PageTest3 test3 description" finished-at="2024-01-05T22:46:18 IST" duration-ms="3" status="FAIL">
+        <test-method signature="test3_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:07 IST" name="test3_PageTest3" description="PageTest3 test3 description" finished-at="2024-01-06T11:55:07 IST" duration-ms="2" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -105,31 +105,31 @@ at java.base/java.lang.Thread.run(Thread.java:1623)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test3_PageTest3 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:19 IST" name="AfterMethod" finished-at="2024-01-05T22:46:19 IST" duration-ms="163" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:07 IST" name="AfterMethod" finished-at="2024-01-06T11:55:08 IST" duration-ms="212" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:19 IST" name="beforeMethod" finished-at="2024-01-05T22:46:24 IST" duration-ms="4932" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:08 IST" name="beforeMethod" finished-at="2024-01-06T11:55:13 IST" duration-ms="5214" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test4_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:24 IST" name="test4_PageTest3" description="PageTest3 test4 description" finished-at="2024-01-05T22:46:24 IST" duration-ms="1" status="PASS">
+        <test-method signature="test4_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:13 IST" name="test4_PageTest3" description="PageTest3 test4 description" finished-at="2024-01-06T11:55:13 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test4_PageTest3 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:24 IST" name="AfterMethod" finished-at="2024-01-05T22:46:24 IST" duration-ms="93" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:13 IST" name="AfterMethod" finished-at="2024-01-06T11:55:13 IST" duration-ms="169" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
-        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:24 IST" name="beforeMethod" finished-at="2024-01-05T22:46:29 IST" duration-ms="5240" status="PASS">
+        <test-method is-config="true" signature="beforeMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:13 IST" name="beforeMethod" finished-at="2024-01-06T11:55:20 IST" duration-ms="6478" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeMethod -->
-        <test-method signature="test5_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:29 IST" name="test5_PageTest3" description="PageTest3 test2 description" finished-at="2024-01-05T22:46:29 IST" duration-ms="2" status="PASS">
+        <test-method signature="test5_PageTest3()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:20 IST" name="test5_PageTest3" description="PageTest3 test2 description" finished-at="2024-01-06T11:55:20 IST" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test5_PageTest3 -->
-        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-05T22:46:29 IST" name="AfterMethod" finished-at="2024-01-05T22:46:29 IST" duration-ms="151" status="PASS">
+        <test-method is-config="true" signature="AfterMethod()[pri:0, instance:pages.test.PageTest3@10e41621]" started-at="2024-01-06T11:55:20 IST" name="AfterMethod" finished-at="2024-01-06T11:55:20 IST" duration-ms="193" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- AfterMethod -->
