@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite" >
+<suite name="Suite" parallel="classes" thread-count="2">
 	<listeners>
 		<listener class-name="listener.TestListener" />
 	</listeners>
 	<parameter name="browserName" value="chrome" />
-  <test thread-count="2" name="Test2">
-    <classes >
-      <class name="pages.test.PageTest3" />
-       <class name="pages.test.PageTest2" />
-   </classes>
-  </test> <!-- Test -->
-  
-  
-</suite> <!-- Suite -->
+	<test name="sampleTest">
+		<classes>
+			<class name="pages.test.TC_001_HondaTest" />
+			<class name="pages.test.TC_004_SuzukiTest" />
+			<class name="pages.test.TC_003_HeroTest" />
+			<class name="pages.test.TC_002_ActivaTest" />
+		</classes>
+	</test>
+</suite> 

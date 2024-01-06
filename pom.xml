@@ -71,6 +71,7 @@
 				<version>3.2.3</version>
 				<configuration>
 					<suiteXmlFiles>
+						<!-- pass testng.xml config file as a parameter from cmd line ${var_name} -->
 						<suiteXmlFile>testng.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>

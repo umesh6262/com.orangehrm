@@ -5,7 +5,9 @@ import java.net.MalformedURLException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 
 import factory.DriverFactory;
@@ -19,10 +21,8 @@ public abstract class BaseTest {
 	protected WebDriver driver;
 	private String driverSessionId = null;
 
-	@BeforeMethod()
+	@BeforeClass()
 	public void beforeMethod() throws MalformedURLException, InterruptedException {
-		Thread.sleep(2000);
-		System.out.println("before method");
 		driver = DriverFactory.getDriver();
 		driver.manage().window().maximize();
 		// print the session id of the driver
@@ -30,11 +30,11 @@ public abstract class BaseTest {
 		System.out.println(driverSessionId);
 //		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(3));
 //		driver.manage().timeouts().pageLoadTimeout(Duration.ofMinutes(1));
-		driver.get("https://www.coverfox.com/");
+		driver.get(Utility.getConfigurationProperty("env_url"));
 
 	}
 
-	@AfterMethod(alwaysRun = true)
+	@AfterClass(alwaysRun = true)
 	public void AfterMethod() {
 		driver.quit();
 	}
@@ -53,8 +53,6 @@ public abstract class BaseTest {
 	}
 
 	public void addAuthor(String author) {
-		System.out
-				.println("Adding Author BaseTest : " + getCurrentObject() + " Avtive Count : " + Thread.activeCount());
 		TestManager.assignAuthorToTest(getCurrentObject(), author);
 	}
 }

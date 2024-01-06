@@ -12,9 +12,12 @@ import java.util.Properties;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.io.FileHandler;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Utility {
 
@@ -66,5 +69,10 @@ public class Utility {
 		}
 		
 		return value;
+	}
+	
+	public static WebElement waitElementToBeVisible(WebDriver driver, WebElement element, int timeInSeconds) {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeInSeconds));
+		return wait.until(ExpectedConditions.visibilityOf(element));
 	}
 }
