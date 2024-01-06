@@ -55,12 +55,12 @@ public class TestManager {
 
 		String imageBase64 = Utility.getScreenshotAsBase64(baseTest.getWebDriver());
 		System.out.println("Test Failure");
-		String destinationFilePath = Utility.getScreenshotAsFile(baseTest.getWebDriver(), getMethodName(result));
+//		String destinationFilePath = Utility.getScreenshotAsFile(baseTest.getWebDriver(), getMethodName(result));
 		if (testMapper.containsKey(runningTestObject)) {
 			ExtentTest test = testMapper.get(runningTestObject);
 			test.log(Status.FAIL, result.getThrowable())
-				.addScreenCaptureFromBase64String(imageBase64)
-				.addScreenCaptureFromPath(destinationFilePath);
+				.addScreenCaptureFromBase64String(imageBase64);
+//				.addScreenCaptureFromPath(destinationFilePath);
 			
 			removeTestFromTestMapper(runningTestObject);
 		}
